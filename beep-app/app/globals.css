@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .input-focused {
+    border-color: oklch(0.833 0.145 321.434);
+    transition:
+      border-top-color 0.1s linear,
+      border-right-color 0.1s linear 0.1s,
+      border-bottom-color 0.1s linear 0.2s,
+      border-left-color 0.1s linear 0.3s;
+  }
+}
